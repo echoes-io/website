@@ -1,9 +1,25 @@
-<section class="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 text-center">
-	<!-- Background image -->
+<script lang="ts">
+	import { onMount } from 'svelte';
+
+	let scrollY = $state(0);
+	let sectionEl: HTMLElement | undefined = $state();
+
+	onMount(() => {
+		const handleScroll = () => {
+			scrollY = window.scrollY;
+		};
+		window.addEventListener('scroll', handleScroll, { passive: true });
+		return () => window.removeEventListener('scroll', handleScroll);
+	});
+</script>
+
+<section bind:this={sectionEl} class="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 text-center">
+	<!-- Background image with parallax -->
 	<img
 		src="/images/echoes-banner.jpg"
 		alt=""
-		class="absolute inset-0 h-full w-full object-cover opacity-50"
+		class="absolute inset-0 h-[120%] w-full object-cover opacity-50"
+		style="transform: translateY({scrollY * 0.3}px)"
 	/>
 	<!-- Gradient overlay -->
 	<div class="absolute inset-0 bg-gradient-to-b from-neutral-900/50 via-neutral-900/30 to-neutral-900"></div>

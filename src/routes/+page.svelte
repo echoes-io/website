@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Hero from '$lib/components/Hero.svelte';
+	import FadeIn from '$lib/components/FadeIn.svelte';
 	import Voice from '$lib/components/Voice.svelte';
 	import WhatIs from '$lib/components/WhatIs.svelte';
 	import Timelines from '$lib/components/Timelines.svelte';
@@ -9,9 +10,25 @@
 </script>
 
 <Hero />
-<Voice />
-<WhatIs />
-<Timelines />
-<Author />
-<EntryPoints />
+
+<FadeIn>
+	<Voice />
+</FadeIn>
+
+<FadeIn>
+	<WhatIs />
+</FadeIn>
+
+<FadeIn>
+	<Timelines />
+</FadeIn>
+
+<FadeIn>
+	<Author />
+</FadeIn>
+
+<FadeIn>
+	<EntryPoints />
+</FadeIn>
+
 <Footer />
