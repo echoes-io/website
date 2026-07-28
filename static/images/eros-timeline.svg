@@ -1,0 +1,18 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .infinity-path {
+        fill: none;
+        stroke: #e74c64;
+        stroke-width: 8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+    </style>
+  </defs>
+  
+  <!-- Infinity symbol (lemniscata) centered -->
+  <g transform="translate(256, 256)">
+    <path class="infinity-path" d="M -120 0 C -120 -80, -40 -80, 0 0 C 40 80, 120 80, 120 0 C 120 -80, 40 -80, 0 0 C -40 80, -120 80, -120 0 Z" />
+  </g>
+</svg>

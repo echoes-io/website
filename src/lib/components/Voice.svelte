@@ -1,0 +1,51 @@
+<script lang="ts">
+	const quotes = [
+		{
+			text: "Something in my chest is doing something it hasn't done in a long time. Not since him. Not with anyone.",
+			voice: 'Her',
+			timeline: 'Eros',
+			color: 'text-eros-400',
+			border: 'border-eros-500',
+			bg: 'bg-eros-950/30',
+		},
+		{
+			text: "She's not beautiful the way Instagram means it. She's beautiful the way a thirty-eight-year-old man means it when he's stopped chasing perfection and started noticing elegance.",
+			voice: 'Him',
+			timeline: 'Glow',
+			color: 'text-glow-400',
+			border: 'border-glow-500',
+			bg: 'bg-glow-950/30',
+		},
+		{
+			text: "I didn't lose myself. I never lose myself. I was there the whole time — present, accounted for, monitoring.",
+			voice: 'Her',
+			timeline: 'Pulse',
+			color: 'text-pulse-400',
+			border: 'border-pulse-500',
+			bg: 'bg-pulse-950/30',
+		},
+	];
+</script>
+
+<section class="mx-auto max-w-3xl px-6 py-24">
+	<h2 class="text-center font-heading text-sm font-medium uppercase tracking-widest text-neutral-400">
+		The Voice
+	</h2>
+
+	<div class="mt-12 space-y-8">
+		{#each quotes as q}
+			<blockquote class="rounded-xl border-l-3 {q.border} {q.bg} py-6 pl-6 pr-5">
+				<p class="font-heading text-lg font-light italic leading-relaxed text-neutral-100 sm:text-xl">
+					"{q.text}"
+				</p>
+				<footer class="mt-4 text-xs uppercase tracking-wide text-neutral-400">
+					<span class={q.color}>{q.timeline}</span> · {q.voice}
+				</footer>
+			</blockquote>
+		{/each}
+	</div>
+
+	<p class="mt-14 text-center text-base text-neutral-400">
+		Every story told from both sides. His voice. Her voice. The space between.
+	</p>
+</section>

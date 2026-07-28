@@ -1,0 +1,10 @@
+<footer class="border-t border-neutral-800 px-6 py-12 text-center text-sm text-neutral-500">
+	<div class="flex justify-center">
+		<img src="/images/echoes-main.svg" alt="Echoes" class="h-8 w-8 opacity-40" />
+	</div>
+	<div class="mt-6 flex justify-center gap-6">
+		<a href="https://readechoes.substack.com" class="transition hover:text-neutral-300">Substack</a>
+		<a href="https://reamstories.com/readechoes" class="transition hover:text-neutral-300">Ream</a>
+	</div>
+	<p class="mt-4">© {new Date().getFullYear()} Nic Vane / Echoes</p>
+</footer>

@@ -1,0 +1,29 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .anima-circle {
+        fill: none;
+        stroke: #2fc470;
+        stroke-width: 3;
+        stroke-linecap: round;
+      }
+      .circle-1 { opacity: 1.0; }
+      .circle-2 { opacity: 0.8; }
+      .circle-3 { opacity: 0.6; }
+      .circle-4 { opacity: 0.4; }
+      .circle-5 { opacity: 0.2; }
+    </style>
+  </defs>
+  
+  <!-- Concentric circles representing layers of consciousness -->
+  <g transform="translate(256, 256)">
+    <circle class="anima-circle circle-1" cx="0" cy="0" r="40" />
+    <circle class="anima-circle circle-2" cx="0" cy="0" r="80" />
+    <circle class="anima-circle circle-3" cx="0" cy="0" r="120" />
+    <circle class="anima-circle circle-4" cx="0" cy="0" r="160" />
+    <circle class="anima-circle circle-5" cx="0" cy="0" r="200" />
+    
+    <!-- Center core -->
+    <circle cx="0" cy="0" r="6" fill="#2fc470" />
+  </g>
+</svg>

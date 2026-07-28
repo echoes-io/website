@@ -1,0 +1,40 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .petal {
+        fill: none;
+        stroke: #e87a47;
+        stroke-width: 4;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .center-core {
+        fill: #e87a47;
+      }
+    </style>
+  </defs>
+  
+  <!-- 6 geometric petals arranged in hexagonal pattern -->
+  <g transform="translate(256, 256)">
+    <!-- Petal 1 (top) -->
+    <path class="petal" d="M 0 -60 Q -30 -120 0 -160 Q 30 -120 0 -60" />
+    
+    <!-- Petal 2 (top-right) -->
+    <path class="petal" d="M 52 -30 Q 104 -90 138 -80 Q 104 -20 52 -30" transform="rotate(60)" />
+    
+    <!-- Petal 3 (bottom-right) -->
+    <path class="petal" d="M 52 -30 Q 104 -90 138 -80 Q 104 -20 52 -30" transform="rotate(120)" />
+    
+    <!-- Petal 4 (bottom) -->
+    <path class="petal" d="M 52 -30 Q 104 -90 138 -80 Q 104 -20 52 -30" transform="rotate(180)" />
+    
+    <!-- Petal 5 (bottom-left) -->
+    <path class="petal" d="M 52 -30 Q 104 -90 138 -80 Q 104 -20 52 -30" transform="rotate(240)" />
+    
+    <!-- Petal 6 (top-left) -->
+    <path class="petal" d="M 52 -30 Q 104 -90 138 -80 Q 104 -20 52 -30" transform="rotate(300)" />
+    
+    <!-- Center core -->
+    <circle class="center-core" cx="0" cy="0" r="12" />
+  </g>
+</svg>
