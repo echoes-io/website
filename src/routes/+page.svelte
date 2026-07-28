@@ -11,23 +11,23 @@
 
 <Hero />
 
-<FadeIn>
+<FadeIn delay={100}>
 	<Voice />
 </FadeIn>
 
-<FadeIn>
+<FadeIn delay={100}>
 	<WhatIs />
 </FadeIn>
 
-<FadeIn>
+<FadeIn delay={100}>
 	<Timelines />
 </FadeIn>
 
-<FadeIn>
+<FadeIn delay={100}>
 	<Author />
 </FadeIn>
 
-<FadeIn>
+<FadeIn delay={100}>
 	<EntryPoints />
 </FadeIn>
 

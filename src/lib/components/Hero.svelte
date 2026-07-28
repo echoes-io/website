@@ -18,8 +18,8 @@
 	<img
 		src="/images/echoes-banner.jpg"
 		alt=""
-		class="absolute inset-0 h-[120%] w-full object-cover opacity-50"
-		style="transform: translateY({scrollY * 0.3}px)"
+		class="absolute inset-0 h-[150%] w-full object-cover opacity-50"
+		style="transform: translateY({scrollY * 0.5}px)"
 	/>
 	<!-- Gradient overlay -->
 	<div class="absolute inset-0 bg-gradient-to-b from-neutral-900/50 via-neutral-900/30 to-neutral-900"></div>

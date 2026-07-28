@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import type { Snippet } from 'svelte';
 
-	let { children }: { children: Snippet } = $props();
+	let { children, delay = 0 }: { children: Snippet; delay?: number } = $props();
 
 	let el: HTMLElement | undefined = $state();
 	let visible = $state(false);
@@ -14,12 +14,16 @@
 			(entries) => {
 				for (const entry of entries) {
 					if (entry.isIntersecting) {
-						visible = true;
+						if (delay > 0) {
+							setTimeout(() => { visible = true; }, delay);
+						} else {
+							visible = true;
+						}
 						observer.unobserve(entry.target);
 					}
 				}
 			},
-			{ threshold: 0.15 }
+			{ threshold: 0.05 }
 		);
 
 		observer.observe(el);
@@ -29,7 +33,7 @@
 
 <div
 	bind:this={el}
-	class="transition-all duration-700 ease-out {visible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}"
+	class="transition-all duration-1000 ease-out {visible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}"
 >
 	{@render children()}
 </div>
