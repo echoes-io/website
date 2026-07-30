@@ -27,7 +27,7 @@ website/
 2. **Interactivity via Islands only** — if client-side JS is needed, use Astro Islands (React, Svelte, or vanilla `<script>`). Never add a full client-side framework globally.
 3. **Brand tokens are canonical** — all colors, fonts, and design tokens come from `@echoes-io/brand`. Do not define custom color values; use the Tailwind classes (`text-eros-400`, `bg-glow-950/30`, `font-heading`, `font-body`).
 4. **Images go in `public/images/`** — reference them via `import.meta.env.BASE_URL + 'images/...'`. Never use relative paths for static assets.
-5. **BASE_URL aware** — the site is deployed under `/website` on GitHub Pages. All asset references must use `import.meta.env.BASE_URL` or Astro's built-in asset handling.
+5. **BASE_URL aware** — all asset references must use `import.meta.env.BASE_URL` or Astro's built-in asset handling.
 6. **No dependencies without discussion** — this is a minimal static site. Adding runtime dependencies is a last resort.
 7. **Semantic HTML** — use proper heading hierarchy, landmarks, and ARIA where needed.
 8. **Dark mode only** — the site uses a dark palette (`bg-neutral-900`, `text-neutral-50`). No light mode toggle.

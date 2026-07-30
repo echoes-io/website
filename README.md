@@ -96,16 +96,16 @@ Questo rende disponibili le classi `text-eros-*`, `text-glow-*`, `text-pulse-*`,
 ```js
 // astro.config.mjs
 export default defineConfig({
-  site: 'https://echoes-io.github.io',
-  base: '/website',
+  site: 'https://readechoes.ink',
+  base: '/',
   vite: {
     plugins: [tailwindcss()],
   },
 });
 ```
 
-- `site` + `base` configurano gli URL per GitHub Pages (repo-based)
-- Quando il sito migrerà su dominio custom, basterà cambiare `site` e rimuovere `base`
+- `site` configura l'URL canonico per i meta tag e sitemap
+- `base` è `/` con dominio custom (non serve più il prefisso repo-based)
 
 ## License
 
