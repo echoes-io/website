@@ -83,7 +83,9 @@ When the reader is added:
 | `npm run dev` | Dev server with hot reload |
 | `npm run build` | Static build → `dist/` |
 | `npm run preview` | Preview the built site |
-| `npm run check` | TypeScript/Astro diagnostics |
+| `npm run lint` | Lint with Biome |
+| `npm run lint:fix` | Lint and auto-fix |
+| `npm run format` | Format with Biome |
 
 ## Deploy
 
