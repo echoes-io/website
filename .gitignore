@@ -1,23 +1,19 @@
-node_modules
+# build
+dist/
 
-# Output
-.output
-.vercel
-.netlify
-.wrangler
-/.svelte-kit
-/build
+# dependencies
+node_modules/
+
+# environment
+.env
+.env.*
+
+# IDE
+.vscode/
+.idea/
 
 # OS
 .DS_Store
-Thumbs.db
 
-# Env
-.env
-.env.*
-!.env.example
-!.env.test
-
-# Vite
-vite.config.js.timestamp-*
-vite.config.ts.timestamp-*
+# Astro
+.astro/

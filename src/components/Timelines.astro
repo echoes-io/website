@@ -1,0 +1,94 @@
+---
+const timelines = [
+  {
+    name: 'Eros',
+    mood: 'The scars you leave on each other',
+    description: 'Long-form serial. Desire, vulnerability, emotional exposure. Dual POV, literary, explicit.',
+    color: 'border-eros-500',
+    accent: 'text-eros-400',
+    image: 'eros-banner.jpg',
+    href: 'https://reamstories.com/readechoes',
+    cta: 'Read on Ream',
+  },
+  {
+    name: 'Glow',
+    mood: 'The warmth you build together',
+    description: 'Intimacy without drama. Morning light, shared routines, the comfort of being known.',
+    color: 'border-glow-500',
+    accent: 'text-glow-400',
+    image: 'glow-banner.jpg',
+    href: 'https://reamstories.com/readechoes',
+    cta: 'Read on Ream',
+  },
+  {
+    name: 'Pulse',
+    mood: 'The space between thoughts',
+    description: 'Weekly fragments. One emotion, one scene, one voice. Free.',
+    color: 'border-pulse-500',
+    accent: 'text-pulse-400',
+    image: 'pulse-banner.jpg',
+    href: 'https://readechoes.substack.com',
+    cta: 'Read free on Substack',
+  },
+  {
+    name: 'Anima',
+    mood: 'The people who hold you up',
+    description: 'Full novels. Tenderness, growth, family. Not explicit.',
+    color: 'border-anima-500',
+    accent: 'text-anima-400',
+    image: 'anima-banner.jpg',
+    href: '#',
+    cta: 'Coming soon',
+  },
+  {
+    name: 'Bloom',
+    mood: "The person you're becoming",
+    description: 'Discovery, balance, new beginnings. Finding yourself through someone else.',
+    color: 'border-bloom-500',
+    accent: 'text-bloom-400',
+    image: 'bloom-banner.jpg',
+    href: '#',
+    cta: 'Coming soon',
+  },
+];
+
+const base = import.meta.env.BASE_URL;
+---
+
+<section class="mx-auto max-w-5xl px-6 py-24">
+  <h2 class="text-center font-heading text-3xl font-semibold sm:text-4xl">The Timelines</h2>
+  <p class="mt-4 text-center text-sm text-neutral-400">
+    Five emotional registers. Same universe, different frequencies.
+  </p>
+
+  <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    {timelines.map((t) => (
+      <div class={`group relative overflow-hidden rounded-xl border-l-4 ${t.color} min-h-[200px]`}>
+        <!-- Background image -->
+        <img
+          src={`${base}images/${t.image}`}
+          alt=""
+          class="absolute inset-0 h-full w-full object-cover opacity-30 transition group-hover:opacity-45"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/70 to-transparent"></div>
+
+        <!-- Content -->
+        <div class="relative z-10 flex h-full flex-col justify-end p-6">
+          <h3 class={`font-heading text-xl font-semibold ${t.accent}`}>{t.name}</h3>
+          <p class="mt-1 text-sm italic text-neutral-300">{t.mood}</p>
+          <p class="mt-3 text-sm leading-relaxed text-neutral-200">{t.description}</p>
+          {t.href !== '#' ? (
+            <a
+              href={t.href}
+              class="mt-4 inline-block text-sm font-medium text-white underline underline-offset-4 transition hover:text-neutral-300"
+            >
+              {t.cta} →
+            </a>
+          ) : (
+            <p class="mt-4 text-sm text-neutral-500">{t.cta}</p>
+          )}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

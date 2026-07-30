@@ -1,0 +1,44 @@
+---
+interface Props {
+  delay?: number;
+}
+
+const { delay = 0 } = Astro.props;
+---
+
+<div class="fade-in translate-y-12 opacity-0 transition-all duration-1000 ease-out" data-delay={delay}>
+  <slot />
+</div>
+
+<script>
+  const elements = document.querySelectorAll('.fade-in');
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          const el = entry.target as HTMLElement;
+          const delay = Number(el.dataset.delay) || 0;
+
+          const reveal = () => {
+            el.classList.remove('translate-y-12', 'opacity-0');
+            el.classList.add('translate-y-0', 'opacity-100');
+          };
+
+          if (delay > 0) {
+            setTimeout(reveal, delay);
+          } else {
+            reveal();
+          }
+
+          observer.unobserve(el);
+        }
+      }
+    },
+    { threshold: 0.05 }
+  );
+
+  for (const el of elements) {
+    observer.observe(el);
+  }
+</script>

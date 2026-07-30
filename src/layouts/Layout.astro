@@ -1,0 +1,26 @@
+---
+import '../styles/global.css';
+---
+
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200..900&family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Echoes — by Nic Vane</title>
+    <meta
+      name="description"
+      content="Serial fiction. Dual POV. The things we don't say. Literary erotica by an Italian man, in English."
+    />
+  </head>
+  <body class="min-h-screen bg-neutral-900 text-neutral-50 font-body antialiased">
+    <slot />
+  </body>
+</html>

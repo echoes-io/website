@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import FadeIn from '../components/FadeIn.astro';
+import Voice from '../components/Voice.astro';
+import WhatIs from '../components/WhatIs.astro';
+import Timelines from '../components/Timelines.astro';
+import Author from '../components/Author.astro';
+import EntryPoints from '../components/EntryPoints.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout>
+  <Hero />
+
+  <FadeIn delay={100}>
+    <Voice />
+  </FadeIn>
+
+  <FadeIn delay={100}>
+    <WhatIs />
+  </FadeIn>
+
+  <FadeIn delay={100}>
+    <Timelines />
+  </FadeIn>
+
+  <FadeIn delay={100}>
+    <Author />
+  </FadeIn>
+
+  <FadeIn delay={100}>
+    <EntryPoints />
+  </FadeIn>
+
+  <Footer />
+</Layout>
