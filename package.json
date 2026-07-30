@@ -18,11 +18,11 @@
     "astro": "^7.1.6"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.5.5",
+    "@biomejs/biome": "2.5.6",
     "@tailwindcss/vite": "^4.3.3",
-    "concurrently": "9.1.2",
-    "lefthook": "1.11.13",
-    "lockfile-lint": "4.14.0",
+    "concurrently": "10.0.4",
+    "lefthook": "2.1.10",
+    "lockfile-lint": "5.0.0",
     "tailwindcss": "^4.3.3",
     "typescript": "^7.0.2"
   }
