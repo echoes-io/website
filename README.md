@@ -1,97 +1,92 @@
 # Echoes — Website
 
-Landing page e sito pubblico del progetto [Echoes](https://github.com/echoes-io), un universo di serial fiction letteraria.
+Public landing page for the [Echoes](https://github.com/echoes-io) project — a multi-timeline literary serial fiction universe.
 
 ## Stack
 
-- **Framework:** [Astro](https://astro.build) (output statico)
-- **Styling:** [Tailwind CSS 4](https://tailwindcss.com) + [@echoes-io/brand](https://github.com/echoes-io/brand) (design tokens, colori timeline, tipografia)
-- **Linguaggio:** TypeScript (strict)
+- **Framework:** [Astro](https://astro.build) (static output)
+- **Styling:** [Tailwind CSS 4](https://tailwindcss.com) + [@echoes-io/brand](https://github.com/echoes-io/brand) (design tokens, timeline colors, typography)
+- **Language:** TypeScript (strict)
+- **Linting:** [Biome](https://biomejs.dev) (lint + format)
 - **Deploy:** GitHub Pages (GitHub Actions)
 
-## Fasi del progetto
+## Project Phases
 
-### Fase 1 — Vetrina (attuale)
+### Phase 1 — Landing (current)
 
-Single-page landing statica. Presenta il progetto Echoes, le timeline (Eros, Glow, Pulse, Anima, Bloom), l'autore, e i punti di ingresso per il lettore.
+Static single-page landing. Introduces the Echoes project, the timelines (Eros, Glow, Pulse, Anima, Bloom), the author, and reader entry points.
 
-### Fase 2 — Reader (futura)
+### Phase 2 — Reader (future)
 
-Aggiunta di pagine per la lettura dei capitoli:
-- Capitoli **free** → pre-renderizzati a build time (SEO, indicizzabili, CDN-cached)
-- Capitoli **paid** → shell statica + island interattivo che fetcha il contenuto da AppSync dopo autenticazione (Cognito)
+Chapter reading pages:
+- **Free chapters** → pre-rendered at build time (SEO, indexable, CDN-cached)
+- **Paid chapters** → static shell + interactive island that fetches content from AppSync after authentication (Cognito)
 
-Il sito resta statico (`output: 'static'`). L'interattività è confinata negli [Astro Islands](https://docs.astro.build/en/concepts/islands/).
+The site stays static (`output: 'static'`). Interactivity is confined to [Astro Islands](https://docs.astro.build/en/concepts/islands/).
 
-### Architettura target (Fase 2)
+### Target Architecture (Phase 2)
 
 ```
-CloudFront → S3 (sito statico Astro)
-                ↓ client-side fetch (solo paid)
+CloudFront → S3 (Astro static site)
+                ↓ client-side fetch (paid only)
            Cognito → AppSync (GraphQL) → Lambda → DynamoDB/S3
 ```
 
-## Sviluppo locale
+## Local Development
 
 ```bash
-# Installa dipendenze
-npm install
-
-# Dev server con hot reload
-npm run dev
-
-# Build statico
-npm run build
-
-# Preview del build
-npm run preview
-
-# Type check
-npm run check
+npm install       # Install dependencies
+npm run dev       # Dev server with hot reload
+npm run build     # Static build → dist/
+npm run preview   # Preview the built site
+npm run lint      # Run all linters in parallel
+npm run lint:format    # Biome lint + format (auto-fix)
+npm run lint:typecheck # TypeScript type checking
+npm run lint:lockfile  # Validate lockfile integrity
 ```
 
-## Struttura
+## Structure
 
 ```
 src/
-├── components/       # Componenti Astro (.astro)
-│   ├── Hero.astro        # Hero con parallax
-│   ├── FadeIn.astro      # Wrapper con fade-in al scroll
-│   ├── Voice.astro       # Citazioni dalle timeline
-│   ├── WhatIs.astro      # Descrizione del progetto
-│   ├── Timelines.astro   # Card delle 5 timeline
-│   ├── Author.astro      # Sezione autore
-│   ├── EntryPoints.astro # CTA per iniziare a leggere
+├── components/       # Astro components (.astro)
+│   ├── Hero.astro        # Hero with parallax
+│   ├── FadeIn.astro      # Scroll fade-in wrapper
+│   ├── Voice.astro       # Timeline quotes
+│   ├── WhatIs.astro      # Project description
+│   ├── Timelines.astro   # 5 timeline cards
+│   ├── Author.astro      # Author section
+│   ├── EntryPoints.astro # Reader CTAs
 │   └── Footer.astro      # Footer
 ├── layouts/
-│   └── Layout.astro      # Layout base (head, fonts, meta)
+│   └── Layout.astro      # Base layout (head, fonts, meta)
 ├── pages/
-│   └── index.astro       # Pagina principale
+│   └── index.astro       # Main page
 └── styles/
     └── global.css        # Tailwind + brand tokens
 public/
-├── images/               # Immagini (banner, cover, loghi)
+├── images/               # Static images (banners, covers, logos)
 └── robots.txt
 ```
 
 ## Deploy
 
-Il deploy avviene automaticamente su GitHub Pages al push su `main` tramite GitHub Actions (`.github/workflows/deploy.yml`).
+Deploys automatically to GitHub Pages on push to `main` via GitHub Actions (`.github/workflows/deploy.yml`).
 
-La output directory di Astro è `dist/`.
+Output directory: `dist/`
 
 ## Brand & Design Tokens
 
-I colori delle timeline, la tipografia e i token di design provengono dal pacchetto `@echoes-io/brand`. Il file `src/styles/global.css` importa il preset Tailwind del brand:
+Timeline colors, typography, and design tokens come from the `@echoes-io/brand` package. The `src/styles/global.css` file imports the brand's Tailwind preset:
 
 ```css
 @import 'tailwindcss';
 @import '@echoes-io/brand/tailwind';
 ```
 
-Questo rende disponibili le classi `text-eros-*`, `text-glow-*`, `text-pulse-*`, ecc., oltre ai font `font-heading` (Crimson Pro) e `font-body` (Inter).
+This makes classes like `text-eros-*`, `text-glow-*`, `text-pulse-*`, etc. available, along with `font-heading` (Crimson Pro) and `font-body` (Inter).
 
-## Configurazione Astro
+## Astro Configuration
 
 ```js
 // astro.config.mjs
@@ -104,9 +99,9 @@ export default defineConfig({
 });
 ```
 
-- `site` configura l'URL canonico per i meta tag e sitemap
-- `base` è `/` con dominio custom (non serve più il prefisso repo-based)
+- `site` sets the canonical URL for meta tags and sitemap
+- `base` is `/` with custom domain
 
 ## License
 
-ISC — vedi [LICENSE](./LICENSE)
+ISC — see [LICENSE](./LICENSE)
