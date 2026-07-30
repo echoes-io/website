@@ -83,9 +83,10 @@ When the reader is added:
 | `npm run dev` | Dev server with hot reload |
 | `npm run build` | Static build → `dist/` |
 | `npm run preview` | Preview the built site |
-| `npm run lint` | Lint with Biome |
-| `npm run lint:fix` | Lint and auto-fix |
-| `npm run format` | Format with Biome |
+| `npm run lint` | Run all linters in parallel |
+| `npm run lint:format` | Biome lint + format (auto-fix) |
+| `npm run lint:typecheck` | TypeScript type checking |
+| `npm run lint:lockfile` | Validate lockfile integrity |
 
 ## Deploy
 
