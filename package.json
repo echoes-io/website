@@ -22,7 +22,7 @@
     "@tailwindcss/vite": "^4.3.3",
     "concurrently": "10.0.4",
     "lefthook": "2.1.10",
-    "lockfile-lint": "5.0.0",
+    "lockfile-lint": "5.1.0",
     "tailwindcss": "^4.3.3",
     "typescript": "^7.0.2"
   }
